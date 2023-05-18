@@ -2,9 +2,8 @@
 require_once "partials/head.php";
 require_once "functions.php";
 $id = $_GET['id'];
-$message = allMessage($_SESSION['id']);
-foreach($message as $mess);
-// dd($message[0]);
+$mess = message($id);
+
 
 
 

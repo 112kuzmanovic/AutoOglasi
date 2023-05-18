@@ -18,7 +18,7 @@ function logUser($user){
     header('Location: index.php');
 }
 function getAll(){
-    $sql = "SELECT cars_table.id,cars_table.mark,cars_table.model,cars_table.img,cars_table.date_of_publication,cars_table.motor,cars_table.price,users.name,users.address FROM cars_table INNER JOIN users ON cars_table.user_id=users.id ORDER BY cars_table.date_of_publication DESC";
+    $sql = "SELECT cars_table.id,cars_table.mark,cars_table.model,cars_table.img,cars_table.date_of_publication,cars_table.motor,cars_table.price,users.name,users.address FROM cars_table INNER JOIN users ON cars_table.user_id=users.id ORDER BY cars_table.date_of_publication DESC LIMIT 0,8";
 
     $query = mysqli_query(db(),$sql);
     $result = mysqli_fetch_all($query,MYSQLI_ASSOC);
@@ -106,6 +106,12 @@ function allAnswer1($id){
     $query = mysqli_query(db(),$sql);
     $question = mysqli_fetch_all($query,MYSQLI_ASSOC);
     return $question;
+}
+function message($id){
+    $sql = "SELECT * FROM newmessage WHERE newmessage.id = '$id'";
+    $query = mysqli_query(db(),$sql);
+    $res = mysqli_fetch_assoc($query);
+    return $res;
 }
 
 ?>

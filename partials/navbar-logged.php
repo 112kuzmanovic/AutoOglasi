@@ -26,14 +26,14 @@ $answer = getAnswer($_SESSION['id']);
 
 <?php if(count($newMsg)>0): ?> 
     <form action="newMessage.php" method="POST">
-    <button style="display:<?php if(isset($_POST['new'])){ echo "none";} ?>" type="submit" name="new" class="btn btn-danger">New Message(<?php echo count($newMsg) ?>)</button>
+    <button style="display:<?php if(isset($_POST['new'])){ echo "none";} ?>" type="submit" name="new" class="btn btn-danger btn-sm">New Message<sup>(<?php echo count($newMsg) ?>)</sup></button>
     </form>
 <?php endif ?>
 
 <?php if(count($question)>0): ?>
-    <a href="carinfo.php?id=<?php echo $question[0]['cars_id'] ?>" type="submit" name="" class="btn btn-danger">New Question(<?php echo count($question) ?>)</a>
+    <a href="carinfo.php?id=<?php echo $question[0]['cars_id'] ?>" type="submit" name="" class="btn btn-danger btn-sm">New Question<sup>(<?php echo count($question) ?>)</sup></a>
 <?php endif ?>
    
 <?php if(count($answer)>0): ?>
-    <a href="carinfo.php?id=<?php echo $answer[0]['car_id'] ?>" type="submit" name="" class="btn btn-danger">New Answer(<?php echo count($answer) ?>)</a>
+    <a href="carinfo.php?id=<?php echo $answer[0]['car_id'] ?>" type="submit" name="" class="btn btn-danger btn-sm">New Answer<sup>(<?php echo count($answer) ?>)</sup></a>
 <?php endif ?>
